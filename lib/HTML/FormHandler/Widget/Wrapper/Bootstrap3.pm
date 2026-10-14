@@ -90,7 +90,8 @@ sub wrap_field {
     unless( $self->get_tag('no_errors') ) {
         $output .= qq{\n<span class="help-block">$_</span>}
             for map { encode_entities($_) } $result->all_errors;
-        $output .= qq{\n<span class="help-block">$_</span>} for $result->all_warnings;
+        $output .= qq{\n<span class="help-block">$_</span>}
+            for map { encode_entities($_) } $result->all_warnings;
     }
     # extra after element stuff
     $output .= $self->get_tag('after_element');

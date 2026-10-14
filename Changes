@@ -1,4 +1,10 @@
 {{$NEXT}}
+   - Escape field warnings in the Simple, Bootstrap and Bootstrap3 wrappers,
+     as errors already are. FormHandler itself never adds a warning, but an
+     application that puts a submitted value into add_warning had it
+     rendered as raw HTML
+   - Add a regression test for CVE-2026-85485: error messages and warnings
+     are checked for escaping in every wrapper that renders them
 
 0.410002  2026-09-07 13:17:02+02:00 Europe/Vienna
    - fix failing t/errors/maketext_inert_argument.t test with non-English locale
